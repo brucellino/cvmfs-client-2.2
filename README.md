@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/AAROC/aaroc.github.io.svg?branch=master)](https://travis-ci.org/AAROC/aaroc.github.io)
+
 CVMFS client (version 2.2)
 =========
 
