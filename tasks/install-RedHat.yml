@@ -2,10 +2,9 @@
 - name: download the CVMFS repo (RedHat)
   become: True
   become_user: root
-  get_url:
-    url: http://cvmrepo.web.cern.ch/cvmrepo/yum/cernvm.repo
-    dest: /etc/yum.repos.d/cernvm.repo
-    mode: 0644
+  yum:
+    name: https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
+    state: present
   tags:
     - cvmfs
     - repos
@@ -15,12 +14,7 @@
   become: true
   become_user: root
   yum: name={{ item }} state=present disable_gpg_check=yes
-  with_items:
-    - cvmfs-release
-    - cvmfs-keys
-    - cvmfs
-    - cvmfs-init-scripts
-    - cvmfs-auto-setup
+  with_items: "{{ prerequisites }}"
   tags:
     - cvmfs
     - install

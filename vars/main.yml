@@ -1,8 +1,5 @@
 ---
 # vars file for cvmfs-client-2.2
 prerequisites:
-  - Debian:
     - cvmfs
     - cvmfs-config-default
-  - RedHat:
-    - 
