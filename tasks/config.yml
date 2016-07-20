@@ -1,6 +1,5 @@
 ---
 - name: copy over the local config files
-  become: true
   copy: src=etc/cvmfs/{{ item }} dest=/etc/cvmfs/{{ item }}
   with_items:
     - default.local
@@ -20,11 +19,9 @@
     src: etc/auto.master
     dest: /etc/auto.master
     mode: u=rw,g=r,o=r
-  become: true
 
 
 - name: ensure that autofs is running
-  become: true
   service:
     name: autofs
     state: started

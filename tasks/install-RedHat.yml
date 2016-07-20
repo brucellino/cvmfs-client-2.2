@@ -1,7 +1,5 @@
 ---
 - name: download the CVMFS repo (RedHat)
-  become: True
-  become_user: root
   yum:
     name: https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest.noarch.rpm
     state: present
@@ -11,8 +9,6 @@
   when: ansible_os_family == 'RedHat'
 
 - name: Install CVMFS client
-  become: true
-  become_user: root
   yum: name={{ item }} state=present disable_gpg_check=yes
   with_items: "{{ prerequisites }}"
   tags:
