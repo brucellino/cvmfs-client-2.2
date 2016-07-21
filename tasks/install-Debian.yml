@@ -6,10 +6,6 @@
     update_cache: true
   register: debcache
 
-- name: has the cache been updated ?
-  debug:
-    var: " {{ debcache }}"  
-
 - name: ensure that cvmfs user is present
   user:
     name: cvmfs
