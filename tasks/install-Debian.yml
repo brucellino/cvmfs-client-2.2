@@ -6,8 +6,8 @@
 
 - name: Update all packages
   apt:
-    name: *
-    state: present
+    name: '*'
+    state: latest
 
 - name: ensure that cvmfs user is present
   user:
