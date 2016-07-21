@@ -8,7 +8,7 @@
 
 - name: has the cache been updated ?
   debug:
-    var: " {{ debcache.cache_updated  }}"  
+    var: " {{ debcache }}"  
 
 - name: ensure that cvmfs user is present
   user:
