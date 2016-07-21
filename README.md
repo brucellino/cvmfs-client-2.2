@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/AAROC/aaroc.github.io.svg?branch=master)](https://travis-ci.org/AAROC/aaroc.github.io)
+[![Build Status](https://travis-ci.org/brucellino/cvmfs-client-2.2.svg?branch=master)](https://travis-ci.org/brucellino/cvmfs-client-2.2)
 
 CVMFS client (version 2.2)
 =========
@@ -8,7 +8,7 @@ This role is to install CVMFS clients and configure them to use the CODE-RADE `f
 Requirements
 ------------
 
-non
+none, but uses escalated priveliges to install packages and start services
 
 Role Variables
 --------------
