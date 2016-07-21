@@ -7,7 +7,7 @@
 - hosts: localhost
   remote_user: cvmfs
   vars:
-    CODE_RADE_VERSION: "{{ string(lookup('file', '/cvmfs/fastrepo.sagrid.ac.za/version')) }}"
+    CODE_RADE_VERSION: "{{ lookup('file', '/cvmfs/fastrepo.sagrid.ac.za/version') | string }}"
   tasks:
   - name: CODE-RADE version
     debug:
