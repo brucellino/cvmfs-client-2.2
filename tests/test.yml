@@ -3,3 +3,9 @@
   remote_user: root
   roles:
     - {name: cvmfs-client-2.2, become: true}
+  post_tasks:
+    vars:
+      CODE_RADE_VERSION: "{{ lookup('file', '/cvmfs/fastrepo.sagrid.ac.za/version') }}"
+    - name: CODE-RADE version ?
+      debug:
+        var: "{{ CODE_RADE_VERSION }}"
