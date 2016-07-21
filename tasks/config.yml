@@ -32,7 +32,7 @@
   stat: "path=/cvmfs/{{ item }}"
   with_items: "{{ repos }}"
   register: p
-  failed_when: "p.results.stat.exists == false"
+  failed_when: "p.stat.exists == false"
 
 - name: debug some stuff
   debug:
