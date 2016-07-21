@@ -1,10 +1,15 @@
 ---
-- name: Install package (Debian)
-  apt:
-    deb: https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
+- name: Add CVMFS repo
+  apt_repository:
+    repo: "deb [trusted=yes] http://cvmrepo.web.cern.ch/cvmrepo/apt stable main"
     state: present
     update_cache: true
-    
+  register: debcache
+
+- name: has the cache been updated ?
+  debug:
+    var: " {{ debcache.cache_updated  }}"  
+
 - name: ensure that cvmfs user is present
   user:
     name: cvmfs
