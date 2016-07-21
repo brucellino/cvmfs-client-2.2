@@ -11,4 +11,4 @@
   tasks:
   - name: CODE-RADE version
     debug:
-      var: "{{ CODE_RADE_VERSION }}"
+      var: "{{ string(CODE_RADE_VERSION) }}"

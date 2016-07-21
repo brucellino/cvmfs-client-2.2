@@ -25,6 +25,9 @@ galaxy_info:
       - stretch
       - wheezy
 
-  galaxy_tags: [grid, cvmfs, HPC]
+  galaxy_tags:
+    - grid
+    - cvmfs
+    - HPC
 
 dependencies: []
