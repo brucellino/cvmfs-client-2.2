@@ -1,5 +1,7 @@
 ---
 # vars file for cvmfs-client-2.2
+
+#  System-level packages needed for CVMFS
 prerequisites:
     - cvmfs
     - cvmfs-config-default

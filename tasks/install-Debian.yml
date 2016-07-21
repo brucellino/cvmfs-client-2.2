@@ -23,6 +23,6 @@
   apt:
     name: "{{ item }}"
     state: present
-  with_items: prerequisites
+  with_items: "{{ prerequisites }}"
   become: true
   when: cvmfs_present.stat.exists == false
