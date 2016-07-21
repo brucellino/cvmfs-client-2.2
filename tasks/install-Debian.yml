@@ -3,12 +3,8 @@
   apt:
     deb: https://ecsft.cern.ch/dist/cvmfs/cvmfs-release/cvmfs-release-latest_all.deb
     state: present
-
-- name: Update all packages
-  apt:
-    name: '*'
-    state: latest
-
+    update_cache: true
+    
 - name: ensure that cvmfs user is present
   user:
     name: cvmfs
