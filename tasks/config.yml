@@ -1,6 +1,8 @@
 ---
 - name: copy over the local config files
-  copy: src=etc/cvmfs/{{ item }} dest=/etc/cvmfs/{{ item }}
+  copy:
+    src: "etc/cvmfs/{{ item }}"
+    dest: "/etc/cvmfs/{{ item }}"
   with_items:
     - default.local
     - keys/apprepo.sagrid.ac.za.pub
