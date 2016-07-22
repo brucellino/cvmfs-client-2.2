@@ -14,7 +14,6 @@
   tags:
     - cvmfs
     - config
-  when: cvmfs_present.stat.exists != True
 
 - name: add the CVMFS master
   copy:
