@@ -1,6 +1,6 @@
 ---
-- include: install-RedHat.yml
-  when: ansible_os_family == 'RedHat'
-- include: install-Debian.yml
-  when: ansible_os_family == 'Debian'
+- include: install-"{{ ansible_os_family }}".yml
 - include: config.yml
+  when: ansible_virtualization_role  is not defined
+- include: config-docker.yml
+  when: "(ansible_virtualization_role  == 'guest') and (ansible_virtualization_type == 'docker')"

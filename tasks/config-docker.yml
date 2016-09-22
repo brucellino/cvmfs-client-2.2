@@ -15,20 +15,20 @@
     - cvmfs
     - config
 
-- name: add the CVMFS master
-  copy:
-    src: etc/auto.master
-    dest: /etc/auto.master
-    mode: u=rw,g=r,o=r
+- name: ensure that the CVMFS mount point is available
+  file:
+    path: /cvmfs
+    state: directory
+    mode: a+rwx
+
+- name: mount the repo
+  mount:
+    name: /cvmfs/fastrepo.sagrid.ac.za
+    fstype: cvmfs
+    state: present
+    src: fastrepo.sagrid.ac.za
 
 
-- name: restart autofs
-  service:
-    name: autofs
-    state: restarted
-  when: (ansible_virtualization_role not "guest") and (ansible_virtualization_type not "docker")
-  tags:
-    - cvmfs
 
 - name: check that the repo is mounted
   stat: "path=/cvmfs/{{ item }}"
@@ -38,5 +38,5 @@
 
 - name: debug some stuff
   debug:
-    var: p
+    var: p.results
   #when: p.stat.isdir is defined and p.stat.isdir
