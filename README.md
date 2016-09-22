@@ -8,7 +8,17 @@ This role is to install CVMFS clients and configure them to use the CODE-RADE `f
 Requirements
 ------------
 
-none, but uses escalated priveliges to install packages and start services
+none, but uses escalated priveliges to install packages and start services.
+
+##  Running in Docker containers.
+
+Note that for running in docker containers you need to give Docker access to the fuse module. This can be done by adding :
+
+```
+--cap-add SYS_ADMIN --cap-add MKNOD --device=/dev/fuse --sety-opt apparmor:unconfined
+```
+
+to the docker run commands.
 
 Role Variables
 --------------
@@ -19,7 +29,7 @@ Role Variables
 Dependencies
 ------------
 
-non
+none
 
 Example Playbook
 ----------------
