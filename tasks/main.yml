@@ -1,5 +1,5 @@
 ---
-- include: "install-{{ ansible_os_family }}".yml
+- include: "install-{{ ansible_os_family }}.yml"
 - include: config.yml
   when: ansible_virtualization_role  is not defined
 - include: config-docker.yml

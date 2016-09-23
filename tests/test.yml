@@ -2,7 +2,7 @@
 - hosts: localhost
   remote_user: root
   roles:
-    - {name: cvmfs-client-2.2, become: true}
+    - {role: cvmfs-client-2.2, become: true }
 
 - hosts: localhost
   remote_user: cvmfs
