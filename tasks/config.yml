@@ -26,7 +26,7 @@
   service:
     name: autofs
     state: restarted
-  when: (ansible_virtualization_role not "guest") and (ansible_virtualization_type not "docker")
+  when: ansible_virtualization_type not 'docker'
   tags:
     - cvmfs
 
