@@ -10,6 +10,7 @@ addons:
   apt:
     packages:
     - python-pip
+    - environment-modules
 
 install:
   # Install ansible
