@@ -33,10 +33,9 @@
     - cvmfs
 
 - name: check that the repo is mounted
-  stat: "path=/cvmfs/{{ item }}"
+  stat: "path=/cvmfs/{{ item }}/version"
   with_items: "{{ repos }}"
   register: p
-  failed_when: "p.stat.exists == false"
   retries: 3
   delay: 3
 
