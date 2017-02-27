@@ -3,6 +3,7 @@
 
 #  System-level packages needed for CVMFS
 prerequisites:
+    - environment-modules
     - cvmfs
     - cvmfs-config-default
 #  The CODE-RADE repos you want to mount
