@@ -32,6 +32,13 @@
   tags:
     - cvmfs
 
+- name: use the modules
+  shell: |
+            . /etc/profile.d/modules.conf
+            module use /cvmfs/code-rade.africa-grid.org/modules/libraries
+            module use /cvmfs/code-rade.africa-grid.org/modules/compilers
+            module avail
+
 - name: check that the repo is mounted
   stat: "path=/cvmfs/{{ item }}/version"
   with_items: "{{ repos }}"
