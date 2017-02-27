@@ -1,19 +1,16 @@
 ---
-- name: copy over the local config files
+- name: Copy CODE-RADE configs
   copy:
-    src: "etc/cvmfs/{{ item }}"
-    dest: "/etc/cvmfs/{{ item }}"
-  with_items:
-    - default.local
-    - keys/apprepo.sagrid.ac.za.pub
-    - config.d/apprepo.sagrid.ac.za.conf
-    - keys/devrepo.sagrid.ac.za.pub
-    - config.d/devrepo.sagrid.ac.za.conf
-    - keys/fastrepo.sagrid.ac.za.pub
-    - config.d/fastrepo.sagrid.ac.za.conf
+    src: "etc/cvmfs/domain.d/code-rade.africa-grid.org.conf"
+    dest: "/etc/cvmfs/domain.d/code-rade.africa-grid.org.conf"
   tags:
     - cvmfs
     - config
+
+- name: Copy CODE-RADE keys
+  copy:
+    src: "etc/cvmfs/keys/africa-grid.org/code-rade.africa-grid.org.pub"
+    dest: "/etc/cvmfs/keys/africa-grid.org/code-rade.africa-grid.org.pub"
 
 - name: add the CVMFS master
   copy:
@@ -35,6 +32,8 @@
   with_items: "{{ repos }}"
   register: p
   failed_when: "p.stat.exists == false"
+  retries: 3
+  delay: 3
 
 - name: debug some stuff
   debug:
