@@ -9,8 +9,9 @@
 
 - name: Ensure that keys dir is present
   file:
-    path: "etc/cvmfs/keys/africa-grid.org/"
+    path: "/etc/cvmfs/keys/africa-grid.org/"
     state: directory
+
 - name: Copy CODE-RADE keys
   copy:
     src: "etc/cvmfs/keys/africa-grid.org/code-rade.africa-grid.org.pub"
