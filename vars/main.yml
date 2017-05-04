@@ -8,5 +8,4 @@ prerequisites:
     - cvmfs-config-default
 #  The CODE-RADE repos you want to mount
 repos:
-  - fastrepo.sagrid.ac.za
   - code-rade.africa-grid.org
