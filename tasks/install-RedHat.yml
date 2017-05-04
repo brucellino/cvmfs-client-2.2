@@ -9,7 +9,13 @@
   when: ansible_os_family == 'RedHat'
 
 - name: Install CVMFS client
-  yum: name={{ item }} state=present disable_gpg_check=yes
+  yum:
+    name: "{{ item }}"
+    state: present
+    disable_gpg_check: yes
+    update_cache: yes
+
+
   with_items: "{{ prerequisites }}"
   tags:
     - cvmfs
