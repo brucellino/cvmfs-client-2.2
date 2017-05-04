@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/brucellino/cvmfs-client-2.2.svg?branch=master)](https://travis-ci.org/brucellino/cvmfs-client-2.2)
+[![Build Status](https://travis-ci.org/brucellino/cvmfs-client-2.2.svg?branch=master)](https://travis-ci.org/brucellino/cvmfs-client-2.2) [![Code Climate](https://codeclimate.com/github/AAROC/cvmfs-client-2.2/badges/gpa.svg)](https://codeclimate.com/github/AAROC/cvmfs-client-2.2) [![Test Coverage](https://codeclimate.com/github/AAROC/cvmfs-client-2.2/badges/coverage.svg)](https://codeclimate.com/github/AAROC/cvmfs-client-2.2/coverage) [![Issue Count](https://codeclimate.com/github/AAROC/cvmfs-client-2.2/badges/issue_count.svg)](https://codeclimate.com/github/AAROC/cvmfs-client-2.2)
 
 CVMFS client (version 2.2)
 =========

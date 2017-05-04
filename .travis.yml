@@ -11,6 +11,9 @@ addons:
     packages:
     - python-pip
 
+before_install:
+  apt-get update
+
 install:
   # Install ansible
   - pip install ansible

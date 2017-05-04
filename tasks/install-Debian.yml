@@ -25,6 +25,7 @@
   apt:
     name: "{{ item }}"
     state: present
+    update_cache: true
   with_items: "{{ prerequisites }}"
   become: true
   when: cvmfs_present.stat.exists == false
