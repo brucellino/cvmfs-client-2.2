@@ -23,10 +23,11 @@
 
 - name: mount the repo
   mount:
-    name: /cvmfs/fastrepo.sagrid.ac.za
+    name: "/cvmfs/{{ item }}"
     fstype: cvmfs
     state: present
-    src: fastrepo.sagrid.ac.za
+    src: "{{ item }}"
+  with_items: repos
 
 
 
