@@ -1,6 +1,6 @@
 galaxy_info:
   author: Bruce  Becker
-  description: An Ansile role for configuring CODE-RADE CVMFS repos
+  description: An Ansible role for configuring CODE-RADE CVMFS repos
   company: CSIR Meraka
   license: Apache-2.0
 

@@ -1,14 +1,14 @@
-[![Build Status](https://travis-ci.org/brucellino/cvmfs-client-2.2.svg?branch=master)](https://travis-ci.org/brucellino/cvmfs-client-2.2) [![Code Climate](https://codeclimate.com/github/AAROC/cvmfs-client-2.2/badges/gpa.svg)](https://codeclimate.com/github/AAROC/cvmfs-client-2.2) [![Test Coverage](https://codeclimate.com/github/AAROC/cvmfs-client-2.2/badges/coverage.svg)](https://codeclimate.com/github/AAROC/cvmfs-client-2.2/coverage) [![Issue Count](https://codeclimate.com/github/AAROC/cvmfs-client-2.2/badges/issue_count.svg)](https://codeclimate.com/github/AAROC/cvmfs-client-2.2)
+[![Build Status](https://travis-ci.org/AAROC/cvmfs-client-2.2.svg?branch=master)](https://travis-ci.org/AAROC/cvmfs-client-2.2) [![Code Climate](https://codeclimate.com/github/AAROC/cvmfs-client-2.2/badges/gpa.svg)](https://codeclimate.com/github/AAROC/cvmfs-client-2.2) [![Test Coverage](https://codeclimate.com/github/AAROC/cvmfs-client-2.2/badges/coverage.svg)](https://codeclimate.com/github/AAROC/cvmfs-client-2.2/coverage) [![Issue Count](https://codeclimate.com/github/AAROC/cvmfs-client-2.2/badges/issue_count.svg)](https://codeclimate.com/github/AAROC/cvmfs-client-2.2)
 
 CVMFS client (version 2.2)
 =========
 
-This role is to install CVMFS clients and configure them to use the CODE-RADE `fastrepo`.
+This role is to install CVMFS clients and configure them to use the CODE-RADE repositories - `code-rade.africa-grid.org`.
 
 Requirements
 ------------
 
-none, but uses escalated priveliges to install packages and start services.
+None, but uses escalated privileges to install packages and start services.
 
 ##  Running in Docker containers.
 
@@ -23,7 +23,7 @@ to the docker run commands.
 Role Variables
 --------------
 
-  * `prerequisites`: the list of prerequiste packages
+  * `prerequisites`: the list of prerequisite packages
 
 
 Dependencies
@@ -38,7 +38,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: cvmfs-clients
       roles:
-         - { role: brucellino.cvmfs-client-2.2, become: true }
+         - { role: AAROC.cvmfs-client-2.2, become: true }
 
 License
 -------

@@ -14,9 +14,7 @@
     state: present
     disable_gpg_check: yes
     update_cache: yes
-
-
-  with_items: "{{ prerequisites }}"
+  with_items: "{{prerequisites}}"
   tags:
     - cvmfs
     - install

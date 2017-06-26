@@ -9,3 +9,5 @@ prerequisites:
 #  The CODE-RADE repos you want to mount
 repos:
   - code-rade.africa-grid.org
+
+mount_dir: /mnt/
