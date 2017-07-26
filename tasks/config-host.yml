@@ -17,20 +17,15 @@
     src: "etc/cvmfs/keys/africa-grid.org/code-rade.africa-grid.org.pub"
     dest: "/etc/cvmfs/keys/africa-grid.org/code-rade.africa-grid.org.pub"
 
+- name: Copy Default config
+  copy:
+    src: "etc/cvmfs/default.local"
+    dest: "/etc/cvmfs/default.local"
+
+
 
 - name: add the CVMFS master
   copy:
     src: etc/auto.master
     dest: /etc/auto.master
     mode: u=rw,g=r,o=r
-
-- name: check that the repo is mounted
-  stat: "path=/cvmfs/{{ item }}/version"
-  with_items: "{{ repos }}"
-  register: p
-  retries: 3
-  delay: 3
-
-- name: debug some stuff
-  debug:
-    var: p

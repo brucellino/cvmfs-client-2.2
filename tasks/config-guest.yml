@@ -17,6 +17,11 @@
     src: "etc/cvmfs/keys/africa-grid.org/code-rade.africa-grid.org.pub"
     dest: "/etc/cvmfs/keys/africa-grid.org/code-rade.africa-grid.org.pub"
 
+- name: Copy Default config
+  copy:
+    src: "etc/cvmfs/default.local"
+    dest: "/etc/cvmfs/default.local"
+
 - name: ensure that the CVMFS mount point is available
   file:
     path: "{{ mount_dir }}/{{ item }}"
