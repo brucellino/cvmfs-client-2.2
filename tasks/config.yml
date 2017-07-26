@@ -17,12 +17,12 @@
     src: "etc/cvmfs/keys/africa-grid.org/code-rade.africa-grid.org.pub"
     dest: "/etc/cvmfs/keys/africa-grid.org/code-rade.africa-grid.org.pub"
 
+
 - name: add the CVMFS master
   copy:
     src: etc/auto.master
     dest: /etc/auto.master
     mode: u=rw,g=r,o=r
-
 
 - name: restart autofs
   service:
@@ -38,8 +38,7 @@
             module use /cvmfs/code-rade.africa-grid.org/modules/libraries
             module use /cvmfs/code-rade.africa-grid.org/modules/compilers
             module avail
-
-
+            
 - name: check that the repo is mounted
   stat: "path=/cvmfs/{{ item }}/version"
   with_items: "{{ repos }}"
