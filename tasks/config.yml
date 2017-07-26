@@ -49,4 +49,3 @@
 - name: debug some stuff
   debug:
     var: p
-  when: p.stat.isdir is defined and p.stat.isdir
