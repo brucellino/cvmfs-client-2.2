@@ -1,6 +1,3 @@
 ---
 - include: "install-{{ ansible_os_family }}.yml"
-- include: config.yml
-  when: "(ansible_virtualization_type != 'docker')"
-- include: config-docker.yml
-  when: "ansible_virtualization_type == 'docker'"
+- include: "config-{{ ansible_virtualization_role }}.yml"
