@@ -3,4 +3,4 @@
 - include: config.yml
   when: "(ansible_virtualization_type != 'docker')"
 - include: config-docker.yml
-  when: "(ansible_virtualization_role  == 'guest') and (ansible_virtualization_type == 'docker')"
+  when: "ansible_virtualization_type == 'docker'"

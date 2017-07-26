@@ -38,7 +38,7 @@
             module use /cvmfs/code-rade.africa-grid.org/modules/libraries
             module use /cvmfs/code-rade.africa-grid.org/modules/compilers
             module avail
-            
+
 - name: check that the repo is mounted
   stat: "path=/cvmfs/{{ item }}/version"
   with_items: "{{ repos }}"
@@ -49,4 +49,4 @@
 - name: debug some stuff
   debug:
     var: p
-  #when: p.stat.isdir is defined and p.stat.isdir
+  when: p.stat.isdir is defined and p.stat.isdir
