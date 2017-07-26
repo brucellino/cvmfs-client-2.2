@@ -28,7 +28,7 @@
   mount:
     name: "{{ mount_dir}}/{{ item }}"
     fstype: cvmfs
-    state: present
+    state: mounted
     src: "{{ item }}"
   with_items: "{{repos}}"
   register: mount_state
@@ -36,20 +36,12 @@
 - debug:
     var: mount_state
 
-- name: shitty hack
-  command: "ls {{ mount_dir }}/{{ item }}/"
-  with_items: "{{ repos }}"
-  register: output
-
-- debug:
-    var: output
-
 - name: check that the repo is mounted
   stat:
     path: "{{ mount_dir }}/{{ item }}/version"
   with_items: "{{ repos }}"
   register: p
-  # failed_when: "p.stat.exists == false"
+  failed_when: "p.stat.exists == false"
   ignore_errors: true
 
 - name: debug some stuff
