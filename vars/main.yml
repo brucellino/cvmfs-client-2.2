@@ -10,4 +10,4 @@ prerequisites:
 repos:
   - code-rade.africa-grid.org
 
-mount_dir: /mnt/
+mount_dir: /cvmfs
