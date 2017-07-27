@@ -22,10 +22,21 @@
     src: "etc/cvmfs/default.local"
     dest: "/etc/cvmfs/default.local"
 
-
-
 - name: add the CVMFS master
   copy:
     src: etc/auto.master
     dest: /etc/auto.master
     mode: u=rw,g=r,o=r
+
+- name: mount the repo
+  mount:
+    name: "{{ mount_dir}}/{{ item }}"
+    fstype: cvmfs
+    state: mounted
+    src: "{{ item }}"
+  with_items: "{{repos}}"
+  register: mount_state
+
+
+- debug:
+    var: mount_state
