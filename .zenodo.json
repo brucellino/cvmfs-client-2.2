@@ -1,0 +1,83 @@
+{
+  "conceptdoi": "10.5281/zenodo.596013",
+  "conceptrecid": "596013",
+  "created": "2017-08-04T15:18:49.866241+00:00",
+  "doi": "10.5281/zenodo.839002",
+  "id": 839002,
+  "links": {
+    "badge": "https://zenodo.org/badge/doi/10.5281/zenodo.839002.svg",
+    "conceptbadge": "https://zenodo.org/badge/doi/10.5281/zenodo.596013.svg",
+    "conceptdoi": "https://doi.org/10.5281/zenodo.596013",
+    "doi": "https://doi.org/10.5281/zenodo.839002"
+  },
+  "metadata": {
+    "access_right": "open",
+    "access_right_category": "success",
+    "communities": [
+      {
+        "id": "code-rade"
+      },
+      {
+        "id": "sa-einfra-commons"
+      }
+    ],
+    "creators": [
+      {
+        "affiliation": "Meraka Institute, CSIR",
+        "name": "Bruce Becker",
+        "orcid": "http://orcid.org/0000-0002-6607-7145"
+      },
+      {
+        "affiliation": "Meraka Institute, CSIR",
+        "name": "Sean",
+        "orcid": "http://orcid.org/0000-0003-0548-588X"
+      }
+    ],
+    "description": "<p>About</p>\n\n<p>This release of the Ansible role for CVMFS in the Africa-Arabia Regional Operations Centre has been updated to fix a few minor configuration errors in the code-rade.africa-grid.org repository and add a few contributions towards the community health of the project.</p>\n\n<p>CODE-RADE is a project for Continuous Delivery of Research Applications in a Distributed Environment; this Ansible role provides the CVMFS client configuration to mount the repositories populated by the continuous integration and testing system at ci.sagrid.ac.za. With the publication of the Foundation Release 3 of the CODE-RADE project, we have changed the scope and name of the repositories, as well as the public signing key.</p>\n\n<p>Summary of main changes</p>\n\n<ul>\n\t<li>2249079 Refactor the CODE-RADE repo config</li>\n\t<li>e7cb8af provide default config</li>\n\t<li>89199a8 Add CVMFS_HTTP_PROXY</li>\n\t<li>7c9ccb1 Add link to NA role for testing</li>\n\t<li>08bbbb6 Pull in tasks based on virtualization_role</li>\n\t<li>3369422 Merge branch 'master' of https://github.com/brucellino/cvmfs-client-2.2</li>\n\t<li>76b9c95 Remove fast and app repo</li>\n\t<li>eebf434 Create CONTRIBUTING.md</li>\n\t<li>ee5a357 Merge pull request #1 from brucellino/add-code-of-conduct-1</li>\n\t<li>3dac5ac Create CODE_OF_CONDUCT.md</li>\n\t<li>5ad0b0e Merge pull request #1 from bazinski/fixcoderade</li>\n\t<li>7e619e8 fixed server url to include the actual repo for code-rade</li>\n\t<li>699e9f0 Update for CODE-RADE repos</li>\n\t<li>60a911d Fastrepo-&gt;CODE-RADE</li>\n\t<li>04b2187 Merge branch 'master' of https://github.com/AAROC/cvmfs-client-2.2 into HEAD</li>\n\t<li>6634243 Fastrepo-&gt;CODE-RADE</li>\n</ul>\n\n<p>Citing</p>",
+    "doi": "10.5281/zenodo.839002",
+    "license": {
+      "id": "Apache-2.0"
+    },
+    "publication_date": "2017-08-04",
+    "related_identifiers": [
+      {
+        "identifier": "https://github.com/AAROC/cvmfs-client-2.2/tree/v1.1.2",
+        "relation": "isSupplementTo",
+        "scheme": "url"
+      },
+      {
+        "identifier": "10.5281/zenodo.596013",
+        "relation": "isPartOf",
+        "scheme": "doi"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "count": 2,
+          "index": 1,
+          "is_last": true,
+          "last_child": {
+            "pid_type": "recid",
+            "pid_value": "839002"
+          },
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "596013"
+          }
+        }
+      ]
+    },
+    "resource_type": {
+      "subtype": "softwaredocumentation",
+      "title": "Software documentation",
+      "type": "publication"
+    },
+    "title": "AAROC/cvmfs-client-2.2: CODE-RADE cvmfs client role v1.1.2"
+  },
+  "owners": [
+    1514
+  ],
+  "revision": 2,
+  "updated": "2017-08-04T15:26:21.509054+00:00"
+}
