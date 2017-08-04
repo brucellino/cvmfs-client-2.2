@@ -1,0 +1,30 @@
+{
+  "@context": "https://raw.githubusercontent.com/codemeta/codemeta/master/codemeta.jsonld",
+  "@type": "Code",
+  "author": [
+    {
+      "@id": "http://orcid.org/0000-0002-6607-7145",
+      "@type": "Person",
+      "email": "bbecker@csir.co.za",
+      "name": "Bruce Becker",
+      "affiliation": "C.S.I.R. Meraka Institute"
+    },
+    {
+      "@id": "http://orcid.org/0000-0003-0548-588X",
+      "@type": "Person",
+      "email": "smurray@csir.co.za",
+      "name": "Sean Murray",
+      "affiliation": "C.S.I.R. Meraka Institute"
+    }
+  ],
+  "identifier": "",
+  "codeRepository": "https://github.com/AAROC/cvmfs-client-2.2",
+  "datePublished": "2017-08-04",
+  "dateModified": "2017-08-04",
+  "dateCreated": "2017-08-04",
+  "description": "This role is to install CVMFS clients and configure them to use the CODE-RADE repositories - `code-rade.africa-grid.org`.",
+  "keywords": "ansible, devops, code-rade, cvmfs, automation, continuous-delivery, africa-grid",
+  "license": "Apache 2.0",
+  "title": "CODE-RADE CVMFS client role for Ansible",
+  "version": "v1.1.2"
+}
