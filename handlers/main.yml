@@ -1,2 +1,6 @@
 ---
 # handlers file for cvmfs-client-2.2
+- name: restart autofs
+  service:
+    name: autofs
+    state: restarted

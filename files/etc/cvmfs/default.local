@@ -1,3 +1,4 @@
+CVMFS_REPOSITORIES=code-rade.africa-grid.org
 #CVMFS_CACHE_BASE=/cvmfs
 #CVMFS_RELOAD_SOCKETS = /cvmfs
 CVMFS_SERVER_URL=http://apprepo.sagrid.ac.za/cvmfs/code-rade.africa-grid.org

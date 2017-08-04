@@ -36,7 +36,7 @@
     src: "{{ item }}"
   with_items: "{{repos}}"
   register: mount_state
-
+  failed_when: false
 
 - debug:
     var: mount_state
