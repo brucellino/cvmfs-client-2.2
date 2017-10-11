@@ -1,2 +1,4 @@
 *.retry
 *.orig
+generate
+ansible.cfg
