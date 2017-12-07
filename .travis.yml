@@ -19,13 +19,14 @@ before_install:
 install:
   # Install ansible
   - pip install ansible
+  # Install python interface to docker
+  - pip install docker
   # Install molecule
   - pip install molecule
   # Check ansible version
   - ansible --version
 
 script:
-  - molecule destroy
   - molecule dependency
   - molecule syntax
   - molecule create
@@ -33,6 +34,7 @@ script:
   - molecule idempotence
   - molecule lint
   - molecule verify
+  - molecule destroy
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
