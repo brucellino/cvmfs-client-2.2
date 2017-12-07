@@ -24,7 +24,14 @@ install:
 
 script:
   # Basic role syntax check
-  - molecule test
+  - molecule destroy
+  - molecule dependency
+  - molecule syntax
+  - molecule create
+  - molecule converge
+  - molecule idempotence
+  - molecule lint
+  - molecule verify
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
