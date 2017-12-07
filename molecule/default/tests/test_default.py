@@ -25,15 +25,14 @@ def test_cvmfs_client(host):
     assert pkg.version.startswith(version)
     assert client.exists
 
-def test_CODE_RADE_mounted(host):
-    """Check that the CODE-RADE repo is mounted"""
 
-    assert host.mount_point("/cvmfs/code-rade.africa-grid.org").exists
+def test_code_rade_mounted(host):
+    """Check that the CODE-RADE repo is mounted."""
+    assert host.mount_point('/cvmfs/code-rade.africa-grid.org').exists
 
 
-def test_CODE_RADE_version(host):
+def test_code_rade_version(host):
     """Check CODE-RADE version."""
-
     cvmfs_version = host.file('/cvmfs/code-rade.africa-grid.org/version')
     assert cvmfs_version.exists
     assert cvmfs_version.contains('FR3')
