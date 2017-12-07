@@ -3,9 +3,11 @@ language: python
 python: "2.7"
 
 # Use the new container infrastructure
-sudo: true
+sudo:
+  - required
 dist: trusty
-services: docker
+services: 
+  - docker
 # Install ansible
 addons:
   apt:
@@ -23,7 +25,6 @@ install:
   - ansible --version
 
 script:
-  # Basic role syntax check
   - molecule destroy
   - molecule dependency
   - molecule syntax
