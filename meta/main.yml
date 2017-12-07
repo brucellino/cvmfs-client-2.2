@@ -1,3 +1,4 @@
+---
 galaxy_info:
   author: Bruce  Becker
   description: An Ansible role for configuring CODE-RADE CVMFS repos
@@ -7,24 +8,22 @@ galaxy_info:
   min_ansible_version: 2.2
 
   platforms:
-  - name: EL
-    versions:
-      - 6
-      - 7
-  - name: Ubuntu
-    versions:
-      - trusty
-      - utopic
-      - vivid
-      - wily
-      - xenial
-
-  - name: Debian
-    versions:
-      - squeeze
-      - stretch
-      - wheezy
-
+    - name: EL
+      versions:
+        - 6
+        - 7
+    - name: Ubuntu
+      versions:
+        - trusty
+        - utopic
+        - vivid
+        - wily
+        - xenial
+    - name: Debian
+      versions:
+        - squeeze
+        - stretch
+        - wheezy
   galaxy_tags:
     - grid
     - cvmfs

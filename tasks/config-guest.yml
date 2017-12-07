@@ -1,4 +1,5 @@
 ---
+
 - name: Copy CODE-RADE domain configs
   copy:
     src: "etc/cvmfs/domain.d/code-rade.africa-grid.org.conf"
@@ -68,4 +69,4 @@
 # - name: debug some stuff
 #   debug:
 #     var: p.results
-  #when: p.stat.isdir is defined and p.stat.isdir
+# when: p.stat.isdir is defined and p.stat.isdir
