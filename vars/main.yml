@@ -1,11 +1,10 @@
 ---
 # vars file for cvmfs-client-2.2
-
 #  System-level packages needed for CVMFS
 prerequisites:
-    - environment-modules
-    - cvmfs
-    - cvmfs-config-default
+  - environment-modules
+  - cvmfs
+  - cvmfs-config-default
 #  The CODE-RADE repos you want to mount
 repos:
   - code-rade.africa-grid.org

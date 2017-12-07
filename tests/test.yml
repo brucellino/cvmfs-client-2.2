@@ -9,12 +9,12 @@
   vars:
     CODE_RADE_VERSION: "{{ lookup('file', '/cvmfs/code-rade.africa-grid.org/version') }}"
   tasks:
-  - name: use the modules
-    shell: |
+    - name: use the modules
+      shell: |
               . /etc/profile.d/modules.sh
               module use /cvmfs/code-rade.africa-grid.org/modules/libraries
               module use /cvmfs/code-rade.africa-grid.org/modules/compilers
               module avail
-  - name: CODE-RADE version
-    debug:
-      msg: " CODE RADE version is {{ CODE_RADE_VERSION }}"
+    - name: CODE-RADE version
+      debug:
+        msg: " CODE RADE version is {{ CODE_RADE_VERSION }}"

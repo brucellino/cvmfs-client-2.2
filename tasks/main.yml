@@ -1,3 +1,12 @@
 ---
+# Tasks for CODE-RADE client config.
+# Optionally use autofs, but this is not possible on docker
+# containers, so we need to have a dynamic include of the
+# config tasks below.
+
+# If we are a guest, we should find out what kind of guest.
+# If we're a virtual machine guest, we should use autofs.
+# If we'are a docker guest, mount statically
+
 - include: "install-{{ ansible_os_family }}.yml"
-- include: "config-{{ ansible_virtualization_role }}.yml"
+- include: "config-{{ ansible_virtualization_type }}.yml"
