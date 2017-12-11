@@ -1,0 +1,72 @@
+---
+
+- name: Copy CODE-RADE domain configs
+  copy:
+    src: "etc/cvmfs/domain.d/code-rade.africa-grid.org.conf"
+    dest: "/etc/cvmfs/domain.d/code-rade.africa-grid.org.conf"
+  tags:
+    - cvmfs
+    - config
+
+- name: Copy CODE-RADE configs
+  copy:
+    src: "etc/cvmfs/config.d/code-rade.africa-grid.org.conf"
+    dest: "/etc/cvmfs/config.d/code-rade.africa-grid.org.conf"
+  tags:
+    - cvmfs
+    - config
+
+- name: Ensure that keys dir is present
+  file:
+    path: "/etc/cvmfs/keys/africa-grid.org/"
+    state: directory
+
+- name: Copy CODE-RADE keys
+  copy:
+    src: "etc/cvmfs/keys/africa-grid.org/code-rade.africa-grid.org.pub"
+    dest: "/etc/cvmfs/keys/africa-grid.org/code-rade.africa-grid.org.pub"
+
+- name: Ensure cvmfs in autofs
+  lineinfile:
+    path: /etc/auto.master
+    line: "/cvmfs /etc/auto.cvmfs"
+    insertafter: EOF
+    state: present
+
+- name: Copy Default config
+  copy:
+    src: "etc/cvmfs/default.local"
+    dest: "/etc/cvmfs/default.local"
+  notify: restart autofs
+
+- name: ensure that the CVMFS mount point is available
+  file:
+    path: "{{ mount_dir }}/{{ item }}"
+    state: directory
+    mode: a+rwx
+  with_items: "{{ repos }}"
+
+- name: mount the repo
+  mount:
+    name: "{{ mount_dir}}/{{ item }}"
+    fstype: cvmfs
+    state: mounted
+    src: "{{ item }}"
+  with_items: "{{repos}}"
+  register: mount_state
+
+- debug:
+    var: mount_state
+
+- name: check that the repo is mounted
+  stat:
+    path: "{{ mount_dir }}/{{ item }}/version"
+  with_items: "{{ repos }}"
+  register: p
+  failed_when: false
+  ignore_errors: true
+
+- name: debug some stuff
+  debug:
+    var: p.results
+when: p.stat.isdir is defined and p.stat.isdir
