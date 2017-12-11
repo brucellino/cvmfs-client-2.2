@@ -69,4 +69,3 @@
 - name: debug some stuff
   debug:
     var: p.results
-when: p.stat.isdir is defined and p.stat.isdir
